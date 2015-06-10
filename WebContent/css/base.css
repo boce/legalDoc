@@ -1,0 +1,274 @@
+body {
+	margin: 0 auto;
+	padding: 0px;
+	font-size: 12px;
+}
+
+.top {
+	width: 1000px;
+	height: 85px;
+	background-image: url("../images/top.jpg");
+	margin: 0 auto;
+	color: black;
+}
+
+.div1 {
+	padding-right: 30px;
+	float: right;
+	margin-top: 10px;
+}
+
+.div1 label {
+	margin-left: 15px;
+}
+
+.div2 {
+	padding-right: 30px;
+	clear: both;
+	float: right;
+	margin-top: 10px;
+}
+
+.div2 label {
+	margin-left: 15px;
+}
+
+.center {
+	width: 1200px;
+	height: 30px;/*fuz mod*/
+	text-align: justify
+}
+
+#easyuiMenu {
+	background-color: #C7C7C7;
+}
+
+.menue {
+	margin-top: 0px;
+	width: 100%;
+	height: 30px;
+}
+
+.menue table  th {
+	text-align: center;
+	width: 60px;
+	height: 28px;
+	font-weight: normal;
+}
+
+.div4 {
+	float: left;
+	width: 866px;
+	height: 620px;
+}
+
+.div4  td {
+	text-align: right;
+}
+
+.div5 {
+	float: right;
+	width: 130px;
+	height: 620px;
+	border: 1px solid #E4E4E4;
+}
+
+.label {
+	width: 150px;
+	height: 30px;;
+}
+
+.content {
+	width: 140px;
+}
+
+/*table*/
+.table {
+	border: 1px solid #D3D3D3;
+	padding: 0;
+	margin: 0;
+	border-collapse: collapse;
+	width: 100%;
+	height: 30px;
+}
+
+.table td {
+	padding: 0px 0px 0px 0px;
+	margin: 0px;
+	border: 1px solid #D3D3D3;
+	font-size: 12px;
+	color: #4f6b72;
+	text-align: right;
+}
+
+.table th {
+	padding: 0px 0px 0px 0px;
+	margin: 0px;
+	border: 1px solid #D3D3D3;
+	font-size: 12px;
+	line-height: 27px;
+	font-weight: bold;
+	color: #575765;
+	text-align: left;
+	background-color: #F2F2F2;
+	background-repeat: repeat-x;
+	vertical-align: middle;
+}
+a{
+	text-decoration: none;
+	/*background-color: rgba(0, 0, 0, 0.07);*/
+	font-size: 12px;
+	color: rgba(203, 14, 140, 0.9);
+}
+a.attachment a:link,a.attachment a:visiteid {
+	color: #FF0000;
+	text-decoration: none;
+}
+
+a.attachment a:hover,a.attachment a:active {
+	color: #000000;
+	text-decoration: underline;
+	background: #FFFFFF;
+}
+
+.icon-district{
+	background:url('../images/icons/district.jpg') no-repeat center center;
+}
+.icon-org{
+	background:url('../images/icons/org.jpg') no-repeat center center;
+}
+.updatepwd{
+	cursor: pointer;
+}
+.exit{
+	cursor: pointer;
+}
+/*修改easyui 验证框样式*/
+.validatebox-invalid {
+	background-image: url('../images/icons/warning.jpg');
+	border-color: #95B8E7;
+	background-color: #ffffff;
+}
+
+/*页面样式========================================================*/
+.cc{
+	width: 1200px;
+	height: 680px;
+}
+.downloadId{
+	display: none;
+}
+.dataDivWindow{
+	overflow-y:auto;
+	overflow-x:hidden;
+}
+.td-label{
+	width: 120px;
+	height: 25px;
+}
+.td-fileName{
+	text-align: left; 
+	height: 25px
+}
+.fileName{
+	width: 100%; 
+	border: 0; 
+	margin: 0; 
+	padding: 0;
+}
+.td-btn-find{
+	width: 100px; 
+	height: 25px; 
+	text-align: left !important;
+}
+.td-data{
+	width: 136px; 
+	height: 25px; 
+	text-align: left
+}
+.td-3data{
+	width: 100%; 
+	border: 0; 
+	margin: 0;
+	padding: 0;
+}
+.td-upload-file{
+	text-align: left !important;
+}
+.td-file-content{
+	text-align: left; 
+	vertical-align: top;
+	padding: 0px
+}
+.view-file{
+	width: 800px; 
+	height: 450px; 
+	overflow: auto;
+	font-size: 16px;
+	padding-left: 100px;
+	padding-right: 100px;
+}
+
+.search-fileName{
+	height: 30px; 
+	padding: 0px;
+}
+.search-fileName td{
+	border: 0px;
+}
+.search-button{
+	height: 30px; 
+	padding: 0px; 
+	border-bottom-width: 0px
+}
+.search-button td{
+	border: 0px;
+}
+/*easyui样式修改===============================================================*/
+.datagrid-body td {
+	text-align: left;
+}
+.panel-header,.panel-body {
+	border-width: 0px;
+	border-style: none;
+}
+.panel-header-noborder {
+	border-width: 0px;
+}
+.panel-body {
+	overflow: hidden;
+}
+.layout-panel {
+	position:static;
+}
+.tabs-panels {
+	overflow: auto;
+}
+.tabs-header,
+.tabs-scroller-left,
+.tabs-scroller-right,
+.tabs-tool,
+.tabs,
+.tabs-panels,
+.tabs li a.tabs-inner,
+.tabs li.tabs-selected a.tabs-inner,
+.tabs-header-bottom .tabs li.tabs-selected a.tabs-inner,
+.tabs-header-left .tabs li.tabs-selected a.tabs-inner,
+.tabs-header-right .tabs li.tabs-selected a.tabs-inner {
+	border-color: #ECF2ED;
+}
+.m-btn .l-btn-left .m-btn-line {
+	border-color: #5E5E5E;
+}
+.panel-tool a {
+	margin: 0px 12px 0px 2px;
+}
+.combo,.combo-panel {
+	background-color: rgba(241, 242, 242, 1);
+	-moz-border-radius: 1px;
+	-webkit-border-radius: 1px;
+	border-radius: 1px;
+}
+.datagrid .datagrid-pager {
+	border-width: 0px;
+}

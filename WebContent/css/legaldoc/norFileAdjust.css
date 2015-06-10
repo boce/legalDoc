@@ -1,0 +1,9 @@
+.dataTable{
+	height: 614px;
+}
+.td-editor{
+	width: 100%;
+	border:0;
+	height: 420px !important;
+	vertical-align: top;
+}

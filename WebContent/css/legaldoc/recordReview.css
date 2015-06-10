@@ -1,0 +1,27 @@
+.dataTable{
+	height: 610px;
+}
+.td-editor{
+	width:860px;
+	height:260px;
+}
+.table-recordReview-record{
+	height: 75px; 
+	padding: 0px;
+}
+.td-recordReview-label{
+	width: 150px;
+	height: 25px;
+}
+.td-recordReview-data{
+	width: 150px;
+	height: 25px;
+	text-align: center !important;
+}
+.table-recordReview-submit{
+	height: 150px; 
+	padding: 0px;
+}
+.editorTr{
+	height:320px;
+}

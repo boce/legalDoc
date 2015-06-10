@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+	xmlns:beans="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+	http://www.springframework.org/schema/security
+	http://www.springframework.org/schema/security/spring-security-3.2.xsd"
+	default-lazy-init="true">
+	<http realm="Contacts Realm">
+		<custom-filter ref="myFilter" before="FILTER_SECURITY_INTERCEPTOR"/>
+        <intercept-url pattern="/" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
+        <intercept-url pattern="/images/**" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
+        <intercept-url pattern="/js/**" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
+        <intercept-url pattern="/css/**" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
+        <intercept-url pattern="/login.jsp*" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
+        <intercept-url pattern="/services/**" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
+        <intercept-url pattern="/**" access="ROLE_USER"/>
+        <form-login login-page="/login.jsp" default-target-url="/share/main.wf" authentication-failure-url="/login.jsp?login_error=1"/>
+        <http-basic/>
+        <logout logout-success-url="/login.jsp"/>
+        <access-denied-handler error-page="/accessDenied.jsp"/>
+        <remember-me />
+        <session-management>
+        	<concurrency-control max-sessions="10" error-if-maximum-exceeded="false"/>
+        </session-management>
+        <!--配置过滤器  -->  
+    </http>
+
+	 <beans:bean id="myFilter" class="com.cdrundle.security.MySecurityFilter">   
+        <!-- 用户拥有的权限 -->   
+        <beans:property name="authenticationManager" ref="authenticationManager" />   
+        <!--用户是否拥有所请求资源的权限   -->
+        <beans:property name="accessDecisionManager" ref="myAccessDecisionManager" />   
+        <!--资源与权限对应关系 -->
+     	<beans:property name="securityMetadataSource" ref="mySecurityMetadataSource" />
+     </beans:bean> 
+    
+    <authentication-manager alias="authenticationManager">
+        <authentication-provider user-service-ref="userDetailsService">
+           <password-encoder hash="md5" />
+        </authentication-provider>
+    </authentication-manager>
+    
+    <beans:bean id="myAccessDecisionManager" class="com.cdrundle.security.MyAccessDecisionManager"/>   
+    <beans:bean id="mySecurityMetadataSource" class="com.cdrundle.security.MySecurityMetadataSource">   
+        <beans:constructor-arg name="dataSource" ref="legaldocDS"/>
+    </beans:bean>
+    
+	<beans:bean id="userDetailsService" class="com.cdrundle.security.WebPlatformUserDetailsService">
+	<!-- org.springframework.security.core.userdetails.jdbc.JdbcDaoImpl -->
+		<beans:property name="dataSource" ref="legaldocDS" />
+		<beans:property name="usersByUsernameQuery">
+			<beans:value>
+				select u.login_name,u.password,u.is_used ,u.sysmgt_org_org,org.name,u.name,u.email,u.id from sysmgt_user u left join sysmgt_organization org
+				on u.sysmgt_org_org = org.id where u.is_used = true and org.is_used = true and u.login_name = ?
+			</beans:value>
+		</beans:property>
+		<beans:property name="authoritiesByUsernameQuery">
+			<beans:value>
+				SELECT u.login_name,r.name FROM sysmgt_user u left join sysmgt_user_role ur on u.id = ur.user_id left join sysmgt_role r on ur.role_id = r.id WHERE u.is_used = true and r.is_used = true and u.login_name = ?
+			</beans:value>
+		</beans:property>
+	</beans:bean>
+
+    <!-- Automatically receives AuthenticationEvent messages -->
+    <beans:bean id="loggerListener" class="org.springframework.security.authentication.event.LoggerListener"/>
+
+	<global-method-security pre-post-annotations="enabled" />
+	<!-- 开启注解 进行方法保护 如: @Secured("ROLE_TELLER") <global-method-security secured-annotations="enabled" 
+		pre-post-annotations="enabled" access-decision-manager-ref="aclAccessDecisionManager"> 
+		<after-invocation-provider ref="afterAclCollectionRead" /> </global-method-security> -->
+</beans:beans>

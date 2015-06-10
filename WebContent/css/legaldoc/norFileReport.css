@@ -1,0 +1,22 @@
+.searchScheme{
+	overflow:auto;
+}
+.searchScheme-title{
+	height: 300px; 
+	overflow:auto;
+}
+.searchScheme-th1{
+	width: 50%;
+}
+.searchScheme-th2{
+	width: 5%;
+}
+.searchScheme-th3{
+	width: 45%;
+}
+.searchScheme-th4{
+	width: 20%;
+}
+.searchScheme-th5{
+	width: 70%;
+}

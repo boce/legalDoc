@@ -1,0 +1,24 @@
+.dataDiv{
+	height:640px;
+	overflow: auto;
+}
+.norFileLeft{
+	float: left; 
+	width: 50%; 
+	height: auto;
+}
+.norFileRight{
+	float: right; 
+	width: 50%; 
+	height: 370px;
+}
+.norFileSearchName{
+	height: 28px; 
+	line-height: 28px;
+}
+.alignLeft{
+	text-align: left;
+}
+.trH{
+	height: 28px;
+}

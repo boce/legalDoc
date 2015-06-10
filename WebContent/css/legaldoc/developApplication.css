@@ -1,0 +1,35 @@
+.dataTable{
+	height: 592px;
+}
+.td-label-first{
+	width: 150px;
+	height: 25px;
+}
+.td-label-atta{
+	width: 150px; 
+	height: 50px;
+}
+.td-spac{
+	width: 50px; 
+	height: 25px; 
+	text-align: left;
+}
+.td-3data-dev{
+	border: 0; 
+	margin: 0; 
+	padding: 0;
+}
+.td-atta{
+	text-align: left;
+	height: 50px;
+}
+.td-label-legalbasic{
+	height:50px;
+	overflow: auto;
+}
+.attaDivId{
+	width: 100%;
+}
+.inputHeight{
+	height: 70%;
+}

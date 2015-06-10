@@ -1,0 +1,20 @@
+.td-editor{
+	width:860px;
+	height:396px;
+}
+
+.hidden{
+	display: none;
+}
+
+.editorTr{
+	height:470px;
+}
+
+.inputWidth{
+	width:99%;
+}
+
+.noBorder{
+	border: 0px;
+}

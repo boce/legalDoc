@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/"
+	debug="false">
+	<appender name="consoleAppender" class="org.apache.log4j.ConsoleAppender">
+		<param name="Threshold" value="INFO" />
+		<param name="Target" value="System.out" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern"			     
+				value="[RUNDLE] %d{yyyy-MM-dd HH:mm:ss} %p [%t] %c{1} |%X{login}|%X{actions}|%X{doWhat}|%X{summary}|%m%n" />
+			<!--
+				<param name="ConversionPattern" value="[BODA] %p [%t] %c{1} | %m%n"
+				/>
+			-->
+		</layout>
+	</appender>
+	<appender name="fileAppender" class="org.apache.log4j.RollingFileAppender">
+		<param name="Threshold" value="INFO" />
+		<param name="File" value="${webApp.root}/legalDoc.log"/>
+		<param name="MaxFileSize" value="1024KB"/>
+		<param name="MaxBackupIndex" value="1"/>
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss} %5p %c{1},%t:%L - %m%n" />
+		</layout>
+	</appender>
+<!-- saving log file to database
+	<appender name="JDBC_Oracle"
+		class="org.apache.log4j.jdbc.JDBCAppender">
+		 <param name="Threshold" value="BUSINESS" />
+		 <param name="driver" value="oracle.jdbc.driver.OracleDriver" />
+		 <param name="URL" value="jdbc:oracle:thin:@192.168.0.11:1521:" />
+		 <param name="user" value="boda" />
+		 <param name="password" value="boda" />
+		 <layout class="org.apache.log4j.PatternLayout">
+		     <param	name="ConversionPattern" value="INSERT INTO LOG4J_LOG (Id, Login,
+		Actions, DoWhat, Summary, Message,CreateDate, Priority, Category,
+		Thread) VALUES (LOG4J_SEQUENCE.nextval, '%X{login}', '%X{actions}',
+		'%X{doWhat}', '%X{summary}', '%m', sysdate, '%p', '%p', '%t')" />
+		 </layout>
+    </appender>
+    
+	<appender name="JDBC_POOL_MYSQL" class="net.sweet.log.appender.JDBCPoolAppender">
+		<param name="Threshold" value="ERROR" />	
+		<param name="dsjndi" value="java:/comp/env/jdbc/aids" />		
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern"
+				value="INSERT INTO Log4J_Log 
+				(Login, Actions, DoWhat, Summary, Message,CreateDate, Priority, Category, Thread)
+				 VALUES
+			    ('%X{login}', '%X{actions}', '%X{doWhat}', '%X{summary}', '%m', '%d{yyyy-MM-dd HH:mm:ss}', '%p', '%p', '%t')" />
+		</layout>
+	</appender> 
+	-->
+	<!-- Buffer events and log them asynchronously -->
+	<appender name="ASYNC" class="org.apache.log4j.AsyncAppender">
+		<param name="BufferSize" value="512" />
+		<appender-ref ref="consoleAppender" />
+		<appender-ref ref="fileAppender" />
+	</appender>
+	
+	<root>
+		<level value="INFO"/>
+		<appender-ref ref="ASYNC" />
+	</root>
+</log4j:configuration>

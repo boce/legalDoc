@@ -1,0 +1,71 @@
+.Button_style
+{
+	background-color:#e05ea3;
+	-moz-border-radius:10px;
+	-webkit-border-radius:10px;
+	border-radius:10px;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:arial;
+	font-size:21px;
+	padding:10px 12px;
+	text-decoration:none;
+	text-shadow:1px 1px 9px #2f6627;
+}
+
+.Button_style:hover 
+{
+	background-color:#5cbf2a;
+}
+.Button_style:active
+{
+	position:relative;
+	top:1px;
+}
+
+.button_change.red {
+background: none repeat scroll 0px 0px rgba(63, 92, 104, 0.13);
+color: rgba(0, 0, 0, 0.79);
+}
+
+.center {
+background: none repeat scroll 0px 0px rgba(63, 92, 104, 0.13);
+color: rgba(0, 0, 0, 0.79);
+}
+.button_change {
+border: 0 none;
+border-radius: 5px 5px 5px 5px;
+color: #FFFFFF;
+cursor: pointer;
+display: inline-block;
+font-family: Arial,sans-serif;
+font-size: 12px;
+font-weight: bold;
+line-height: 28px;
+margin-bottom: 0px;
+margin-top: 0px;
+padding: 1px 1px 8px;
+text-transform: none;
+transition: all 0.3s ease 0s;
+-moz-transition: all 0.3s ease 0s;
+-webkit-transition: all 0.3s ease 0s;
+width: 60px;
+height: 18px;
+text-align: center;
+
+}
+
+.button_change.red:hover {
+background: none repeat scroll 0 0 rgba(52, 101, 144, 0.3);
+color: white;
+}
+
+.button_change.blue:hover {
+background: none repeat scroll 0 0 #2db6cf;
+color: white;
+}
+
+user agent stylesheetdiv {
+display: block;
+}

@@ -1,0 +1,30 @@
+table td{
+	border: 0px;
+}
+.pageHead{
+	width: 1200px; 
+	margin:0 auto;
+}
+.pageHead-top{
+	width: inherit;
+}
+.pageHead-top-content{
+	width: 1200px; 
+	text-align: right; 
+	margin:0 auto
+}
+.pageHead-top-content-div1{
+	padding: 68px 4px;
+}
+.pageHead-top-content-div2{
+	width: inherit; 
+	position: absolute;
+}
+.pageHead-top-content-ul{
+	width: 1200px;
+}
+.pageContent{
+	width: 1200px;
+	border-bottom:1px solid ;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.09);
+}

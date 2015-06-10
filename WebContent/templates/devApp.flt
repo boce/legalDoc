@@ -1,0 +1,41 @@
+<center><div style="font-size:24px;font-weight:bold;">《${devApp.name}》申请书</div></center>
+<div style="font-size:14px;"><span style="width:300px;">申报单位（盖章）：${devApp.applyOrg.name}</span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span>申报时间：${devApp.applyDate?string("yyyy-MM-dd")}</span></div>
+<table border="1" cellspacing="0" cellpadding="0" style="font-size:14px;">
+	<tr>
+		<td style="width:170px;height:28px;">规范性文件名称</td>
+		<td colspan="3">${devApp.name}</td>
+	</tr>
+	<tr style="height:28px;">
+		<td>批准申请领导</td><td style="width:120px;">${devApp.applyLeader.name}</td>
+		<td style="width:120px;">电话</td><td style="width:120px;">${(devApp.applyLeader.phone)!""}</td>
+	</tr>
+	<tr>
+		<td>制定依据</td><td colspan="3">${legalBasisContent}</td>
+	</tr>
+	<tr>
+		<td>制定的必要性、合法性，以及社会稳定性风险评估</td><td colspan="3">${necLegalRisk}</td>
+	</tr>
+	<tr>
+		<td>拟解决的主要问题</td><td colspan="3">${mainProblem}</td>
+	</tr>
+	<tr>
+		<td>拟确定的制度或措施，以及可行性论证	</td><td colspan="3">${planRegAndMea}</td>
+	</tr>
+	<tr>
+		<td>涉及的部门</td><td colspan="3">${involvedOrges}</td>
+	</tr>
+	<tr>
+		<td>合法性审查拟送审时间</td><td colspan="3">${devApp.planReviewDate?string("yyyy-MM-dd")}</td>
+	</tr>
+	<tr>
+		<td>申报单位负责人意见</td><td>${devApp.applyLeaderComment}</td>
+		<td>签字</td><td></td>
+	</tr>
+	<tr>
+		<td>批准申请领导意见</td><td>${devApp.approvalLeaderComment}</td>
+		<td>签字</td><td></td>
+	</tr>
+	<tr>
+		<td>备注</td><td colspan="3">${devApp.remarks}</td>
+	</tr>
+</table>

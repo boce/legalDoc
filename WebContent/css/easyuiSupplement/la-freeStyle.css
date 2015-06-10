@@ -1,0 +1,299 @@
+/*div row*/
+.form_row 
+{
+    width: 610px;
+    float: left;
+    clear: both;
+    margin: 0 0 10px 0;
+}
+
+/*label*/
+.form_row label
+{
+   width: 100px;
+   float: left;
+   padding: 5px 0 0px 0;/*�ڱ߿�*/
+   font-size: 12px;
+   color: #535E66;
+   font-weight: bold;
+   text-shadow: 1px 1px #fff;
+   text-align: right;/*����λ��*/
+   cursor: text;
+}
+
+user agent stylesheetdiv
+{
+   display: block;
+}
+
+.form_input
+{
+   width: 720px;
+   height: 24px;
+   float: left;/*Ԫ�ظ���������CSS���κ�Ԫ�ض����Ը���*/
+   padding: 0px 0px 0 4px;
+   background-color: #F4F6F7;
+   border: 1px #90A9B7 solid;
+   color: #000;
+   -moz-border-radius: 4px;
+   -webkit-border-radius: 4px;
+   border-radius: 2px;
+}
+.form_input_spe
+{
+   width: 150px;
+   height: 24px;
+   float: left;
+   padding: 0px 0px 0 4px;
+   background-color: #F4F6F7;
+   border: 1px #90A9B7 solid;
+   color: #000;
+   -moz-border-radius: 4px;
+   -webkit-border-radius: 4px;
+   border-radius: 2px;
+}
+
+user agent stylesheetinput:not([type]), input[type="color"], input[type="email"], input[type="number"], input[type="password"], input[type="tel"], input[type="url"], input[type="text"] 
+{
+   padding: 1px 0px;
+}
+
+user agent stylesheetinput, input[type="password"], input[type="search"], isindex
+{
+   -webkit-appearance: textfield;
+   padding: 1px;
+   background-color: white;
+   border: 2px inset;
+   border-image-source: initial;/*�߿�ͼƬ·��*/
+   border-image-slice: initial;
+   border-image-width: initial;
+   border-image-outset: initial;
+   border-image-repeat: initial;
+   -webkit-rtl-ordering: logical;
+   -webkit-user-select: text;
+   cursor: auto;
+}
+
+user agent stylesheetinput, textarea, keygen, select, button, isindex
+{
+   margin: 0em;
+   font: -webkit-small-control;
+   color: initial;
+   letter-spacing: normal;
+   word-spacing: normal;
+   text-transform: none;
+   text-indent: 0px;
+   text-shadow: none;
+   display: inline-block;
+   text-align: start;
+}
+
+user agent stylesheetinput, textarea, keygen, select, button, isindex, meter, progress
+{
+   -webkit-writing-mode: horizontal-tb;
+}
+
+select.form_select
+{
+   width: 300px;
+   height: 35px;
+   float: left;
+   padding: 6px 3px 6px 3px; /*element�ڱ߾�*/
+   background-color: #F4F6F7;
+   border: 1px #90A9B7 solid;/*�������еı߿�����;solid����߿�ʵ�ߵ���ʽΪʵ��*/
+   color: #000;
+   -moz-border-radius: 4px;
+   -webkit-border-radius: 4px;
+   border-radius: 4px;
+   font-size:10px
+}
+
+user agent stylesheetkeygen, select, select[size="0"], select[size="1"]
+{
+   border-radius: 0px;
+   border-color: rgb(169, 169, 169);
+}
+
+user agent stylesheetselect 
+{
+   -webkit-appearance: menulist;
+   box-sizing: border-box;
+   align-items: center;
+   border: 1px solid;
+   border-image-source: initial;
+   border-image-slice: initial;
+   border-image-width: initial;
+   border-image-outset: initial;
+   border-image-repeat: initial;
+   white-space: pre;
+   -webkit-rtl-ordering: logical;
+   color: black;
+   background-color: white;
+   cursor: default;
+}
+
+user agent stylesheetkeygen, select
+{
+   border-radius: 5px;
+}
+
+user agent stylesheetinput, textarea, keygen, select, button, isindex
+{
+   margin: 0em;
+   font: -webkit-small-control;
+   color: initial;
+   letter-spacing: normal;
+   word-spacing: normal;
+   text-transform: none;
+   text-indent: 0px;
+   text-shadow: none;
+   display: inline-block;
+   text-align: start;
+}
+
+user agent stylesheetinput, textarea, keygen, select, button, isindex, meter, progress
+{
+   -webkit-writing-mode: horizontal-tb;
+}
+
+.form_textarea
+{
+   width: 500px;
+   height: 100px;
+   float: left;
+   padding: 3px 0px 0 4px;
+   background-color: #F4F6F7;
+   border: 1px #90A9B7 solid;
+   color: #000;
+   font-family: Arial, Helvetica, sans-serif;
+   font-size: 12px;
+   -moz-border-radius: 4px;
+   -webkit-border-radius: 4px;
+   border-radius: 4px;
+}
+
+user agent stylesheettextarea 
+{
+   font-family: monospace;/*Ϊ������������*/
+   border-color: rgb(169, 169, 169);
+}
+
+user agent stylesheettextarea
+{
+   -webkit-appearance: textarea;
+   background-color: white;
+   border: 1px solid;/*�߿�*/
+   border-image-source: initial;
+   border-image-slice: initial;
+   border-image-width: initial;
+   border-image-outset: initial;
+   border-image-repeat: initial;
+   -webkit-rtl-ordering: logical;
+   -webkit-user-select: text;
+   flex-direction: column;
+   resize: auto;
+   cursor: auto;
+   padding: 2px;/*����Ԫ�������ڱ߾�*/
+   white-space: pre-wrap;/*����Ԫ���еĿհ׷�*/
+   word-wrap: break-word;/*���û��������ǰ�г���ָ�������ı߽�ʱ�Ƿ�Ͽ�ת��*/
+}
+
+user agent stylesheetinput, textarea, keygen, select, button, isindex
+{
+   margin: 0em;/*��߾��������丸��������Գ���*/
+   font: -webkit-small-control;
+   color: initial;
+   letter-spacing: 2px;/*inherit,normal,length. Whitespace  between the characters*/
+   word-spacing: normal;/*inherit,normal,length Whitespace  between the word*/
+   text-transform: none;/*text-transform ���Կ����ı��Ĵ�Сд*/
+   text-indent: 0px;/*��������*/
+   text-shadow: none;/*�ı���ӰЧ��0px 0px 0px #FF0000*/
+   display: inline-block;
+   text-align: start;
+}
+
+
+/*���û������������ݿ���е���д����*/
+user agent stylesheetinput, textarea, keygen, select, button, isindex, meter, progress
+{
+   -webkit-writing-mode: horizontal-tb;
+}
+
+/*�ؼ��߾�*/ 
+.form
+{
+   padding: 10px;
+}
+
+user agent stylesheetdi
+{
+   display: block;
+}
+
+/*page footer css */
+
+.content {  
+      width: 360px;  
+      height: 240px;  
+}  
+.ver_hor_center {  
+      position: absolute;  
+      top: 50%;  
+      left: 50%;  
+      margin-left: -180px; /*要居中的div的宽度的一半*/  
+      margin-top: -120px; /*要居中的div的高度的一半*/  
+}  
+
+
+
+/*menu button css*/
+.Button_style:hover 
+{
+	background-color:#5cbf2a;
+}
+.Button_style:active
+{
+	position:relative;
+	top:1px;
+}
+
+.button_change.red {
+background: none repeat scroll 0 0 #c92e24;
+color: white;
+}
+.button_change {
+border: 0 none;
+border-radius: 3px 3px 3px 3px;
+color: #FFFFFF;
+cursor: pointer;
+display: inline-block;
+font-family: Arial,sans-serif;
+font-size: 12px;
+font-weight: bold;
+line-height: 20px;
+margin-bottom: 0;
+margin-top: 10px;
+padding: 7px 10px;
+text-transform: none;
+transition: all 0.3s ease 0s;
+-moz-transition: all 0.3s ease 0s;
+-webkit-transition: all 0.3s ease 0s;
+width: 11.795%;
+text-align: center;
+
+}
+
+.button_change.red:hover {
+background: none repeat scroll 0 0 #999999;
+color: white;
+}
+
+.button_change.blue:hover {
+background: none repeat scroll 0 0 #2db6cf;
+color: white;
+}
+
+user agent stylesheetdiv {
+display: block;
+}
+

@@ -1,0 +1,14 @@
+table td{
+	border: 0px;
+}
+.menuTree{
+	height: 270px;
+	overflow: auto;
+}
+.authMenuTree{
+	height: 270px;
+	overflow: auto;
+}
+.layout-panel{
+	position: absolute;
+}

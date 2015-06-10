@@ -1,0 +1,37 @@
+.table-search{
+	text-align: left !important;
+}
+.reportName{
+	text-align: center;
+	vertical-align: middle;
+	font-size: 24px;
+	font-weight: bold;
+	height: 50px;
+}
+.td-content{
+	height:60px;
+	text-align: center;
+	vertical-align: middle;
+}
+.countItem{
+	width:60px;
+	height:120px;
+}
+.content{
+	width: 70px;
+}
+.problem{
+	width: 240px !important;
+}
+.result{
+	width: 200px !important;
+}
+.dec{
+	width: 50px;
+}
+.order{
+	height: 28px;
+}
+.total{
+	height: 30px;
+}

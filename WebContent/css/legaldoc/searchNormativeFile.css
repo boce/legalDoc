@@ -1,0 +1,17 @@
+.search-fileName{
+	height: 30px; 
+	padding: 0px;
+}
+.search-button-norfile{
+	height: 30px; 
+	width:588px;
+	padding: 0px; 
+	border: 0px
+}
+.search-button-td{
+	text-align: right;
+	border: 0px;
+}
+.bd{
+	border: 0px;
+}

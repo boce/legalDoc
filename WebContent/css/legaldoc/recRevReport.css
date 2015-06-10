@@ -1,0 +1,41 @@
+.searchScheme{
+	height: 180px; 
+	overflow:auto; 
+}
+.searchScheme-th1{
+	width: 50%;
+	text-align: center !important;
+}
+.searchScheme-th2{
+	width: 5%;
+	text-align: center !important;
+}
+.searchScheme-th3{
+	width: 45%;
+	text-align: center !important;
+}
+.searchScheme-td-label{
+	width: 120px; 
+	height: 24px;  
+	text-align: center
+}
+.condtionname{
+	width: 60px; 
+	height: 24px; 
+	text-align: center  !important;
+}
+.valuename{
+	width: 280px; 
+	height: 24px;  
+	text-align: left !important;
+}
+.td-space{
+	width: 350px;
+}
+.table-button{
+	height: 24px; 
+	text-align: center !important;
+}
+.table-button td{
+	border: 0px;
+}

@@ -1,0 +1,35 @@
+.dataTable{
+	/* height:600px; */
+}
+.td-editor{
+	width:860px;
+	height:370px;
+}
+.search-td{
+	width: 120px;
+	height: 20px
+}
+.search-td-input{
+	text-align:left !important;
+	height: 20px
+}
+.search-td-button{
+	width: 100px;
+	height: 20px;
+	text-align: left !important;
+}
+.search-td-find-button{
+	margin: 0; 
+	padding: 0;
+}
+.uploadTable{
+	border:0px;
+	text-align: center;
+}
+.uploadTable td{
+	border:0px;
+	border-width: 0px;
+}
+.editorTr{
+	height:430px;
+}

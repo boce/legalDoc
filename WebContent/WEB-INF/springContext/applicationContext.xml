@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jee="http://www.springframework.org/schema/jee" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:jpa="http://www.springframework.org/schema/data/jpa"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa.xsd"
+	default-lazy-init="false">
+	
+	<context:annotation-config/>
+	<context:component-scan base-package="com.cdrundle.legaldoc"/>
+	
+	<jee:jndi-lookup id="legaldocDS" jndi-name="java:/jdbc/legaldoc"
+		resource-ref="true" />
+
+	<bean id="entityManagerFactory"
+		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+		<property name="persistenceProviderClass"
+			value="org.hibernate.jpa.HibernatePersistenceProvider" />
+		<property name="jpaProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.PostgreSQL9Dialect</prop>
+				<!-- 
+				<prop key="hibernate.transaction.jta.platform">org.hibernate.engine.transaction.jta.platform.internal.JBossAppServerJtaPlatform
+				</prop>
+				<prop key="hibernate.transaction.factory_class">org.hibernate.engine.transaction.internal.jta.CMTTransactionFactory
+				</prop>
+				 -->
+				<prop key="hibernate.cache.provider_class">org.hibernate.cache.EhCacheProvider</prop>
+				<prop key="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.EhCacheRegionFactory
+				</prop>
+				<prop key="hibernate.cache.use_second_level_cache">false</prop>
+				<prop key="hibernate.cache.use_query_cache">false</prop>
+				<prop key="hibernate.hbm2ddl.auto">none</prop>
+				<prop key="hibernate.format_sql">true</prop>
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.id.new_generator_mappings">true</prop>
+				<prop key="hibernate.temp.use_jdbc_metadata_defaults">false</prop>
+			</props>
+		</property>
+		<property name="dataSource" ref="legaldocDS" />
+		<property name="packagesToScan">
+			<array>
+				<value>com.cdrundle.legaldoc.entity</value>
+			</array>
+		</property>
+	</bean>
+	
+	<!-- JPA事务管理 -->
+	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+		<property name="entityManagerFactory" ref="entityManagerFactory" />
+	</bean>
+
+	<!-- 事务注解 -->
+	<tx:annotation-driven transaction-manager="transactionManager" />
+
+	<!--当前登录信息 
+	<bean id="loginInfo" class="com.cdrundle.security.LoginInfo"
+		scope="session">
+		<aop:scoped-proxy />
+	</bean>
+	-->
+	<jpa:repositories base-package="com.cdrundle.legaldoc.dao" />
+
+
+	<!--登录成功监听类 
+	<bean id="loginSuccessListener" class="com.cdrundle.security.LoginSuccessListener" />-->
+
+	<!-- quartz定时调度配置 -->
+	<bean id="jobFactory" class="com.cdrundle.legaldoc.schedule.QuartzJobFactory"></bean>
+    <bean id="schedulerFactoryBean" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+    	<property name="jobFactory" ref="jobFactory"/>
+    	<property name="dataSource" ref="legaldocDS"/>
+    	<!--applicationContextSchedulerContextKey： 是org.springframework.scheduling.quartz.SchedulerFactoryBean这个类中把spring上下 文以key/value的方式存放在了quartz的上下文中了，可以用applicationContextSchedulerContextKey所定义的key得到对应的spring上下文-->  
+    	<property name="applicationContextSchedulerContextKey" value="applicationContextKey"/>
+    	<!--configLocation：用于指明quartz的配置文件的位置 --> 
+    	<property name="configLocation" value="classpath:quartz.properties"/>
+    </bean>
+	
+	<!-- freemarker配置 -->
+	<bean id="freemarkerConfiguration" class="org.springframework.ui.freemarker.FreeMarkerConfigurationFactoryBean">
+		<property name="templateLoaderPath" value="/templates/" />
+		<property name="defaultEncoding" value="utf-8" />
+		<property name="freemarkerSettings">
+			<props>
+				<prop key="template_update_delay">10</prop>
+				<prop key="locale">zh_CN</prop>
+				<prop key="datetime_format">yyyy-MM-dd</prop>
+				<prop key="date_format">yyyy-MM-dd</prop>
+				<prop key="number_format">#.##</prop>
+			</props>
+		</property>  
+	 </bean>  
+</beans>

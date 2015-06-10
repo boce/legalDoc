@@ -1,0 +1,16 @@
+.table-cleanup{
+	height:60px;
+}
+.table-btn-clean-table{
+	width: 780px; 
+	height: 60px; 
+	border: 1px
+}
+.table-btn-clean-td{
+	width: 100px; 
+	text-align: right !important;
+}
+.table-btn-clean-td-data{
+	width: 120px; 
+	text-align: left !important;
+}

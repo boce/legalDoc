@@ -1,0 +1,106 @@
+p, td, tr, th {
+	margin:0 auto;
+	padding:0;
+	font-weight:normal;
+	text-align: left;
+}
+
+.spe_table p {
+	margin-bottom:15px;
+}
+
+.spe_table_input {
+    width: 96%;
+    height: 28px;
+    float: left;
+    padding: 1px 20px;
+    border: 0px solid #90A9B7;
+    color: rgba(0, 0, 0, 0.45);
+    border-radius: 3px;
+    font-size:100%;
+    background: url('../../images/search.png') no-repeat scroll 4px 9px #FFF !important;
+	
+}
+
+.spe_table_button {
+    width: inherit;
+    height: 28px;
+    float: left;
+    padding: 0px 0px 0px 4px;
+   
+    border: 1px solid #90A9B7;
+    color: #000000;
+    border-radius: 4px;
+}
+
+.spe_table {
+	border-collapse:collapse;
+	margin-bottom:0px;
+	width:100%;
+}
+
+td,th {
+	padding:0px;
+	border:1px solid #fff;
+	border-width:1px 1px 1px 1px;
+	/* border-color: hidden; */
+	margin: 0px;
+}
+
+.spe_table th {
+	padding:5px;
+	border:1px solid #fff;
+	border-width:0 1px 1px 0;
+}
+thead th {
+	background:#91c5d4;
+}
+thead th[colspan],thead th[rowspan] {
+	background:#66a9bd;
+}
+tbody th,tfoot th {
+	text-align:left;
+	background:#91c5d4;
+}
+tbody td,tfoot td {
+	text-align:center;
+	/* background: none repeat scroll 0% 0% rgba(19, 20, 1, 0.05); */ /*表格背景色*/
+	border: 1px solid;/*表格边框*/
+	border-color:#d3d3d3;
+}
+tfoot th {
+	background:#b0cc7f;
+}
+tfoot td {
+	background:#d7e1c5;
+	font-weight:bold;
+}		
+tbody tr.odd td { 
+	background:#bcd9e1;
+}
+
+
+/* .inputFocusStyle { */
+/* /* 	border:0px solid; */ */
+/* /*     border-color: rgba(12, 151, 194, 0.82); */ */
+/*     -moz-box-shadow: 0px 0px 4px 0px rgba(22, 152, 97, 0.95) inset; */
+/* 	box-shadow: 0px 0px 4px 0px rgba(22, 152, 97, 0.95) inset; */
+/* } */
+
+.spe_table_input:focus {
+	box-shadow: 0 0 5px rgba(18, 213, 31, 1);
+	-webkit-box-shadow: 0 0 5px rgba(18, 213, 31, 1);
+	-moz-box-shadow: 0 0 5px rgba(18, 213, 31, 1);
+	font-size:100%;
+}
+
+.spe_table textarea{
+	width: 99%;
+	height: 60%;
+	border:0px;
+	resize: none;
+	margin: 0px;
+}
+body { 
+	cursor: url("../../images/spe_cursor.jpg");
+}
